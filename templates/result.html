@@ -1,0 +1,180 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        table th {
+            background-color: #3498db;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detection Result</h1>
+    <img src="data:image/jpeg;base64,{{ image_data }}" alt="Detection Result">
+    <table>
+        <thead>
+            <tr>
+                <th>Object Detected</th>
+                <th>Confidence Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj, score in detections %}
+            <tr>
+                <td>{{ obj }}</td>
+                <td>{{ score }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .section {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .line{
+            border-bottom: solid 2px black;
+            size-adjust: 20px;
+        }
+        .underline {
+        text-decoration: underline;
+    }
+        </style>
+    
+</head>
+<body>
+        <h1 class="underline">Detection Results</h1>
+    <div class="section">
+        <h2>Results from Model 1</h2>
+        <img src="data:image/jpeg;base64,{{ image_data_1 }}" alt="Result from Model 1">
+        <table>
+            <thead>
+                <tr>
+                    <th>Object</th>
+                    <th>Confidence (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, confidence in detections_1 %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ confidence }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Results from Model 2</h2>
+        <img src="data:image/jpeg;base64,{{ image_data_2 }}" alt="Result from Model 2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Object</th>
+                    <th>Confidence (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, confidence in detections_2 %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ confidence }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
