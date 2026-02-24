@@ -58,8 +58,8 @@ import base64
 app = Flask(__name__)
 
 # Load the YOLOv8 models
-model_1 = YOLO(r'C:\Users\nagar\OneDrive\Desktop\plastic detection\underwater_plastics\runs\detect\custom_yolov8s_model_50\weights\best (2).pt')  # First model
-model_2 = YOLO(r'C:\Users\nagar\OneDrive\Desktop\plastic detection\underwater_plastics\runs\detect\custom_yolov8l_model_100\weights\best (1).pt')  # Second model
+model_1 = YOLO(r'D:\\Project\\underwater_plastics\\runs\\detect\\custom_yolov8s_model_50\\weights\\best (2).pt')  # First model
+model_2 = YOLO(r'D:\\Project\\underwater_plastics\\runs\\detect\\custom_yolov8l_model_100\\weights\\best (1).pt') #Second model
 
 @app.route('/')
 def index():
@@ -117,3 +117,4 @@ def detect():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
